@@ -18,7 +18,7 @@ const tones = {
 
 export function Section({ children, id, tone = "white", className, labelledBy }: SectionProps) {
   return (
-    <section id={id} aria-labelledby={labelledBy} className={cn("py-14 sm:py-16 lg:py-20", tones[tone], className)}>
+    <section id={id} aria-labelledby={labelledBy} className={cn("py-16 sm:py-20 lg:py-24", tones[tone], className)}>
       <div className="container-page">{children}</div>
     </section>
   );
@@ -38,19 +38,21 @@ type HeadingProps = {
 
 export function SectionHeading({ id, eyebrow, title, description, align = "left", tone = "light", as: Tag = "h2", action, className }: HeadingProps) {
   const center = align === "center";
+  const dark = tone === "dark";
   return (
-    <div className={cn("mb-9 flex flex-col gap-4 sm:mb-11 sm:flex-row sm:items-end sm:justify-between", center && "items-center text-center sm:flex-col sm:items-center", className)}>
+    <div
+      className={cn(
+        "reveal mb-10 flex flex-col gap-5 sm:mb-12 sm:flex-row sm:items-end sm:justify-between",
+        center && "items-center text-center sm:flex-col sm:items-center",
+        className,
+      )}
+    >
       <div className={cn("max-w-2xl", center && "mx-auto")}>
-        {eyebrow && (
-          <p className={cn("mb-2 text-xs font-bold uppercase tracking-[0.16em]", tone === "dark" ? "text-accent" : "text-blue")}>{eyebrow}</p>
-        )}
-        <Tag
-          id={id}
-          className={cn("title-bar text-balance text-2xl sm:text-3xl lg:text-[2.15rem]", center && "title-bar-center", tone === "dark" && "!text-white")}
-        >
+        {eyebrow && <p className={cn("eyebrow mb-3", dark && "eyebrow-light")}>{eyebrow}</p>}
+        <Tag id={id} className={cn("text-[1.75rem] sm:text-4xl lg:text-[2.5rem]", dark && "!text-white")}>
           {title}
         </Tag>
-        {description && <p className={cn("mt-4 text-base sm:text-lg", tone === "dark" ? "text-white/80" : "text-ink-muted")}>{description}</p>}
+        {description && <p className={cn("mt-4 text-base leading-relaxed sm:text-lg", dark ? "text-white/80" : "text-ink-muted")}>{description}</p>}
       </div>
       {action}
     </div>

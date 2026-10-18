@@ -10,7 +10,7 @@ const linkClass = "rounded text-white/80 underline-offset-4 transition-colors ho
 
 export function Footer() {
   return (
-    <footer className="bg-navy-900 text-white">
+    <footer className="border-t-4 border-accent bg-navy-900 text-white">
       <div className="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1.2fr_1.3fr]">
         <div>
           <Link href="/" aria-label="Apar Dynamics — home" className="inline-block rounded-xl bg-white p-3">

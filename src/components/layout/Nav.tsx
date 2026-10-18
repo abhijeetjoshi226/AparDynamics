@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Menu, Phone, X } from "lucide-react";
+import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import type { NavItem } from "@/data/navigation";
 import { company, whatsappLink } from "@/data/site";
 import { WhatsAppIcon } from "@/components/ui/icons";
@@ -13,25 +13,39 @@ function isActive(pathname: string, href: string) {
   return href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
 }
 
-export function DesktopNav({ items }: { items: NavItem[] }) {
+export function DesktopNav({ items, serviceLinks }: { items: NavItem[]; serviceLinks: NavItem[] }) {
   const pathname = usePathname();
+  const linkBase =
+    "relative inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-bold transition-colors hover:text-blue after:absolute after:inset-x-3 after:-bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-accent after:transition-transform hover:after:scale-x-100";
   return (
     <nav aria-label="Primary" className="hidden xl:block">
-      <ul className="flex items-center gap-1">
+      <ul className="flex items-center gap-0.5">
         {items.map((item) => {
           const active = isActive(pathname, item.href);
+          const hasMenu = item.href === "/engineering-solutions";
           return (
-            <li key={item.href}>
+            <li key={item.href} className="group/nav relative">
               <Link
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={cn(
-                  "relative rounded-md px-3 py-2 text-sm font-semibold transition-colors hover:text-blue",
-                  active ? "text-blue after:absolute after:inset-x-3 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-accent" : "text-navy",
-                )}
+                className={cn(linkBase, active ? "text-blue after:scale-x-100" : "text-navy")}
               >
                 {item.label}
+                {hasMenu && <ChevronDown className="size-3.5 transition-transform group-hover/nav:rotate-180 group-focus-within/nav:rotate-180" aria-hidden="true" />}
               </Link>
+              {hasMenu && (
+                <div className="invisible absolute left-0 top-full z-50 w-72 translate-y-1 pt-3 opacity-0 transition duration-200 group-focus-within/nav:visible group-focus-within/nav:translate-y-0 group-focus-within/nav:opacity-100 group-hover/nav:visible group-hover/nav:translate-y-0 group-hover/nav:opacity-100">
+                  <ul className="overflow-hidden rounded-lg border border-line border-t-2 border-t-accent bg-white py-2 shadow-card-hover">
+                    {serviceLinks.map((s) => (
+                      <li key={s.href}>
+                        <Link href={s.href} className="block px-4 py-2.5 text-sm font-semibold text-navy transition-colors hover:bg-surface hover:text-blue">
+                          {s.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </li>
           );
         })}

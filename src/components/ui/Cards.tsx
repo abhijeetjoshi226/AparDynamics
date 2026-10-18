@@ -7,7 +7,7 @@ import { Media } from "./Media";
 import { cn } from "@/lib/utils";
 
 const cardBase =
-  "group relative flex h-full flex-col overflow-hidden rounded-[--radius-card] border border-line bg-white shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-card-hover focus-within:shadow-card-hover";
+  "reveal group relative flex h-full flex-col overflow-hidden rounded-[--radius-card] border border-line bg-white shadow-card transition duration-300 before:absolute before:inset-x-0 before:top-0 before:z-10 before:h-1 before:origin-left before:scale-x-0 before:bg-accent before:transition-transform before:duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:before:scale-x-100 focus-within:shadow-card-hover focus-within:before:scale-x-100";
 
 export function ServiceCard({ service, priority }: { service: Service; priority?: boolean }) {
   return (
@@ -22,7 +22,7 @@ export function ServiceCard({ service, priority }: { service: Service; priority?
         />
       </div>
       <div className="flex flex-1 flex-col p-5">
-        <h3 className="text-lg">{service.title}</h3>
+        <h3 className="text-lg leading-snug">{service.title}</h3>
         <p className="mt-2 flex-1 text-sm text-ink-muted">{service.summary}</p>
         <Link
           href={`/engineering-solutions/${service.slug}`}
@@ -86,8 +86,8 @@ const featureIcons: Record<string, LucideIcon> = {
 export function FeatureCard({ title, text, icon }: { title: string; text: string; icon: string }) {
   const Icon = featureIcons[icon] ?? Settings;
   return (
-    <div className="h-full rounded-[--radius-card] border border-line bg-white p-6 shadow-card">
-      <span className="grid size-12 place-items-center rounded-xl bg-blue-50 text-blue">
+    <div className="reveal h-full rounded-[--radius-card] border border-line border-l-4 border-l-accent bg-white p-6 shadow-card transition duration-300 hover:-translate-y-0.5 hover:shadow-card-hover">
+      <span className="grid size-12 place-items-center rounded-md bg-navy text-accent">
         <Icon className="size-6" aria-hidden="true" />
       </span>
       <h3 className="mt-4 text-lg">{title}</h3>

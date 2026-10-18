@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/home/Hero";
 import { StatsBar } from "@/components/home/StatsBar";
 import {
+  AboutIntro,
+  CapabilitiesBand,
+  EnquirySection,
   GalleryPreview,
   IndustriesSection,
   JustPortaShowcase,
@@ -9,7 +12,6 @@ import {
   SolutionsSection,
   WhyChooseSection,
 } from "@/components/home/HomeSections";
-import { CtaBanner } from "@/components/ui/CtaBanner";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
@@ -24,13 +26,15 @@ export default function HomePage() {
     <>
       <Hero />
       <StatsBar />
+      <AboutIntro />
       <SolutionsSection />
+      <CapabilitiesBand />
       <IndustriesSection />
       <ProcessSection />
       <JustPortaShowcase />
       <WhyChooseSection />
       <GalleryPreview />
-      <CtaBanner />
+      <EnquirySection />
     </>
   );
 }
