@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, Mail, MapPin, Phone } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
-import { FeatureCard, IndustryCard, ServiceCard } from "@/components/ui/Cards";
+import { FeatureCard, IndustryCard } from "@/components/ui/Cards";
+import { FlipCard } from "@/components/ui/FlipCard";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { homeIndustries } from "@/data/industries";
 import { justPorta, portaProducts } from "@/data/just-porta";
@@ -21,7 +22,7 @@ export function SolutionsSection() {
         id="solutions-title"
         eyebrow="What we do"
         title="Our Engineering Solutions"
-        description="Custom-engineered equipment and fabrication for production, assembly, handling and inspection."
+        description="Custom-engineered equipment and fabrication for production, assembly, handling and inspection. Hover or tap a card for details."
         action={
           <Link href="/engineering-solutions" className="inline-flex items-center gap-1.5 text-sm font-bold text-blue hover:text-navy">
             View all solutions <ArrowRight className="size-4" aria-hidden="true" />
@@ -31,7 +32,7 @@ export function SolutionsSection() {
       <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {featuredServices.map((service) => (
           <li key={service.slug}>
-            <ServiceCard service={service} />
+            <FlipCard service={service} />
           </li>
         ))}
       </ul>

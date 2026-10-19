@@ -9,15 +9,15 @@ export function Hero() {
     <section aria-labelledby="hero-title" className="relative overflow-hidden bg-blueprint text-white">
       <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 bg-gradient-to-l from-navy-900/70 to-transparent lg:block" />
       <div className="container-page relative grid items-center gap-12 pb-24 pt-12 sm:pb-28 sm:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:pb-32 lg:pt-24">
-        <div className="animate-fade-up">
-          <p className="eyebrow eyebrow-light mb-5">Engineering without limits</p>
-          <h1 id="hero-title" className="text-[2.4rem] !text-white sm:text-5xl lg:text-[3.6rem] lg:leading-[1.05]">
+        <div>
+          <p className="eyebrow eyebrow-light animate-fade-up mb-5">Engineering without limits</p>
+          <h1 id="hero-title" className="animate-fade-up [animation-delay:90ms] text-[2.4rem] !text-white sm:text-5xl lg:text-[3.6rem] lg:leading-[1.05]">
             Engineering Solutions That <span className="text-accent">Drive Industry Forward</span>
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">
+          <p className="animate-fade-up mt-6 max-w-xl text-base leading-relaxed text-white/85 [animation-delay:180ms] sm:text-lg">
             From custom material handling and precision fabrication to assembly systems and robotic automation, we engineer solutions around your production needs.
           </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="animate-fade-up mt-9 flex flex-col gap-3 [animation-delay:270ms] sm:flex-row">
             <ButtonLink href="/engineering-solutions" variant="accent" size="lg">
               Explore Our Solutions
             </ButtonLink>
@@ -25,7 +25,7 @@ export function Hero() {
               Discuss Your Project
             </ButtonLink>
           </div>
-          <ul className="mt-10 grid gap-3 border-t border-white/15 pt-6 text-sm font-semibold text-white/85 sm:grid-cols-3">
+          <ul className="animate-fade-up mt-10 grid gap-3 border-t border-white/15 pt-6 text-sm font-semibold text-white/85 [animation-delay:360ms] sm:grid-cols-3">
             {assurances.map((t) => (
               <li key={t} className="flex items-start gap-2.5">
                 <span className="mt-1.5 size-1.5 shrink-0 rounded-sm bg-accent" aria-hidden="true" />
