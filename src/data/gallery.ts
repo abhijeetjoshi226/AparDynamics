@@ -1,10 +1,17 @@
-export type GalleryCategory = "facility" | "engineering" | "fabrication" | "cabins";
+export type GalleryCategory = "facility" | "machines" | "engineering" | "fabrication" | "cabins";
 
 /**
  * How an image should be described to visitors.
  * Never label a render or catalogue image as a completed customer project.
  */
-export type GalleryKind = "Facility photo" | "CAD render" | "Product range" | "Just Porta cabin";
+export type GalleryKind =
+  | "Facility photo"
+  | "Machine"
+  | "CAD render"
+  | "Assembly & test equipment"
+  | "Fabricated equipment"
+  | "Product range"
+  | "Just Porta cabin";
 
 export type GalleryItem = {
   id: string;
@@ -19,6 +26,7 @@ export type GalleryItem = {
 export const galleryCategories: { id: "all" | GalleryCategory; label: string }[] = [
   { id: "all", label: "All" },
   { id: "facility", label: "Facility" },
+  { id: "machines", label: "Machines available" },
   { id: "engineering", label: "Fixtures & assembly" },
   { id: "fabrication", label: "SS & MS fabrication" },
   { id: "cabins", label: "Portable cabins" },
@@ -33,12 +41,41 @@ const c = (id: string, title: string, file: string, alt: string): GalleryItem =>
 const s = (id: string, title: string, file: string, alt: string): GalleryItem => ({
   id, title, category: "fabrication", kind: "Product range", src: `/images/solutions/${file}.webp`, alt, fit: "contain",
 });
+const eq = (id: string, title: string, file: string, alt: string, fit: "cover" | "contain" = "contain"): GalleryItem => ({
+  id, title, category: "engineering", kind: "Assembly & test equipment", src: `/images/products/${file}.webp`, alt, fit,
+});
+const tr = (id: string, title: string, file: string, alt: string): GalleryItem => ({
+  id, title, category: "fabrication", kind: "Fabricated equipment", src: `/images/products/${file}.webp`, alt, fit: "cover",
+});
+const mc = (id: string, title: string, file: string, alt: string, fit: "cover" | "contain" = "contain"): GalleryItem => ({
+  id, title, category: "machines", kind: "Machine", src: `/images/products/${file}.webp`, alt, fit,
+});
 const p = (id: string, title: string, file: string, alt: string): GalleryItem => ({
   id, title, category: "cabins", kind: "Just Porta cabin", src: `/images/just-porta/${file}.webp`, alt, fit: "cover",
 });
 
 export const galleryItems: GalleryItem[] = [
   f("floor", "10,000 sq ft manufacturing unit", "facility", "factory-floor", "Interior of the Apar Dynamics manufacturing shed with steel roof trusses"),
+
+  mc("m-laser", "Laser cutting machine", "laser-cutting-machine", "Sheet laser cutting machine inside a workshop", "cover"),
+  mc("m-press-brake", "Press brake", "press-brake", "Blue press brake with foot pedals and control box", "cover"),
+  mc("m-mig", "MIG welding machine", "mig-welding-machine", "Yellow MIG 250 welding machine with wire feeder"),
+  mc("m-drill", "Bench drilling machine", "bench-drilling-machine", "Orange bench drilling machine"),
+  mc("m-saw", "Metal cut-off saw", "cut-off-saw", "Yellow metal cut-off saw with abrasive wheel"),
+  mc("m-screw-press", "Screw press", "screw-press", "Hand-operated screw press with flywheel"),
+
+  eq("eq-weld-table", "Welding fixture table", "welding-fixture-table", "Welding fixture table with clamps and tube fixtures"),
+  eq("eq-workstation", "Ergonomic assembly workstation", "ergonomic-workstation", "Ergonomic assembly workstation with roller conveyor and bin rack"),
+  eq("eq-spm-blue", "Assembly machine with feeder", "spm-assembly-machine", "Blue assembly machine with feeder bowl and press unit"),
+  eq("eq-spm-press", "Special purpose assembly machine (SPM)", "spm-press-station", "Pneumatic special purpose assembly machine in an aluminium-profile frame with safety guards", "cover"),
+  eq("eq-test-station", "Aluminium-profile test station", "profile-test-station", "Aluminium-profile test station with touch screen and clamping unit"),
+
+  tr("tr-1", "Order-picking trolley", "trolley-1", "White four-shelf order-picking trolley with red castor wheels"),
+  tr("tr-2", "Tiered storage trolley", "trolley-2", "White tiered storage trolley with pegs on castors"),
+  tr("tr-3", "Roller trolley for long parts", "trolley-3", "White multi-tier roller trolley for long components"),
+  tr("tr-4", "Mesh-base rack trolley", "trolley-4", "Blue steel rack trolley with mesh base"),
+  tr("tr-5", "Mesh cage trolley", "trolley-5", "Black mesh cage trolley with towbar"),
+  tr("tr-6", "Stackable component rack", "trolley-6", "Blue stackable component rack on castors"),
 
   c("cad-cell", "Guarded automated work cell", "cad-1", "CAD render of a guarded automated work cell on a steel stand"),
   c("cad-clamp", "Pneumatic clamping fixture", "cad-2", "CAD render of a pneumatic clamping fixture on a base plate"),

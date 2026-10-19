@@ -14,6 +14,7 @@ import { capabilities, company, fullAddress, machinery, whatsappLink } from "@/d
 import { ButtonAnchor } from "@/components/ui/Button";
 import { WhatsAppIcon } from "@/components/ui/icons";
 import { QuoteForm } from "@/components/quote/QuoteForm";
+import { MachineGrid } from "@/components/ui/MachineGrid";
 
 export function SolutionsSection() {
   return (
@@ -142,7 +143,7 @@ export function WhyChooseSection() {
 }
 
 export function GalleryPreview() {
-  const picks = ["floor", "cad-rotary", "ss-hopper", "cad-line", "jp-site-office", "cad-semi"].map((id) => galleryItems.find((g) => g.id === id)).filter((g) => !!g);
+  const picks = ["floor", "eq-weld-table", "tr-4", "cad-rotary", "m-press-brake", "jp-site-office"].map((id) => galleryItems.find((g) => g.id === id)).filter((g) => !!g);
   return (
     <Section tone="surface" labelledBy="gallery-title">
       <SectionHeading
@@ -258,6 +259,10 @@ export function CapabilitiesBand() {
             ))}
           </div>
         </div>
+      </div>
+      <div className="reveal mt-14">
+        <h3 className="text-sm font-extrabold uppercase tracking-[0.16em] !text-accent">Machines available</h3>
+        <MachineGrid className="mt-5" />
       </div>
     </Section>
   );

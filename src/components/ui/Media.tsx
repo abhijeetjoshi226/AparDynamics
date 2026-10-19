@@ -26,6 +26,7 @@ export function Media({ image, aspect = "aspect-[4/3]", sizes, priority, classNa
         fill
         sizes={sizes}
         priority={priority}
+        style={image.position ? { objectPosition: image.position } : undefined}
         className={cn(contain ? "object-contain p-3" : "object-cover", imgClassName)}
       />
     </div>
