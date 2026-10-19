@@ -6,6 +6,17 @@ import { flattenErrors, quoteCategories, quoteSchema, validateFile } from "@/lib
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
+/**
+ * Delivery targets.
+ *  - TESTING (default): enquiries go to TEST_RECIPIENT, sent from Resend's shared testing sender.
+ *    Resend only delivers from that sender to the email address the Resend account was created with,
+ *    so TEST_RECIPIENT must be the account owner's address.
+ *  - LIVE: set QUOTE_TO_EMAIL=info@apardynamics.com and QUOTE_FROM_EMAIL to an address on a domain
+ *    verified in Resend. No code change needed.
+ */
+const TEST_RECIPIENT = "Abhijeetjoshi226@gmail.com";
+const TEST_SENDER = "Apar Dynamics Website <onboarding@resend.dev>";
+
 // Best-effort, per-instance rate limit. For stronger protection add Vercel Firewall / WAF rules.
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_PER_WINDOW = 5;
@@ -30,11 +41,12 @@ function json(body: Record<string, unknown>, status: number) {
 }
 
 export async function POST(request: Request) {
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.QUOTE_TO_EMAIL;
-  const from = process.env.QUOTE_FROM_EMAIL;
-  if (!apiKey || !to || !from) {
-    console.error("[quote] Email delivery is not configured. Set RESEND_API_KEY, QUOTE_TO_EMAIL and QUOTE_FROM_EMAIL.");
+  const apiKey = process.env.RESEND_API_KEY?.trim();
+  const to = process.env.QUOTE_TO_EMAIL?.trim() || TEST_RECIPIENT;
+  const from = process.env.QUOTE_FROM_EMAIL?.trim() || TEST_SENDER;
+  const testing = !process.env.QUOTE_TO_EMAIL?.trim();
+  if (!apiKey) {
+    console.error("[quote] Email delivery is not configured. Set RESEND_API_KEY (see README).");
     return json(
       {
         ok: false,
@@ -105,13 +117,13 @@ export async function POST(request: Request) {
       from,
       to: to.split(",").map((s) => s.trim()).filter(Boolean),
       replyTo: data.email,
-      subject: `Quote request ${reference}: ${oneLine(categoryLabel)} — ${oneLine(data.company)}`,
+      subject: `${testing ? "[TEST] " : ""}Quote request ${reference}: ${oneLine(categoryLabel)} — ${oneLine(data.company)}`,
       html,
       text,
       attachments: file ? [{ filename: file.name.replace(/[^\w.\- ]/g, "_"), content: Buffer.from(await file.arrayBuffer()) }] : undefined,
     });
     if (error) {
-      console.error("[quote] Resend rejected the message:", error.name, error.message);
+      console.error(`[quote] Resend rejected the message (to=${to}, from=${from}):`, error.name, error.message);
       return json({ ok: false, error: "We could not send your enquiry right now. Please try again, or contact us directly." }, 502);
     }
   } catch (err) {

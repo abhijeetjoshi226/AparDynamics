@@ -27,17 +27,20 @@ Checks: `npm run lint` · `npm run typecheck` · `npm run build` · `npm start`
 
 Images live in `public/images/` (`brand`, `facility`, `solutions`, `just-porta`). Replace a file with the same name to swap an image, or add new entries to the data files.
 
-## Quote form — activate email delivery
+## Quote form — email delivery
 
-Submissions go to `POST /api/quote`, which validates on the server and sends email through [Resend](https://resend.com). **Until configured, the form shows an honest "not available" message and nothing is reported as sent.**
+Submissions go to `POST /api/quote`, which validates on the server and sends email through [Resend](https://resend.com). **Without `RESEND_API_KEY` the form shows an honest "not available" message and nothing is reported as sent.**
 
-1. Create a Resend account, verify your sending domain, create an API key.
-2. Set (locally in `.env.local`, and in Vercel → Project → Settings → Environment Variables):
-   - `RESEND_API_KEY`
-   - `QUOTE_TO_EMAIL` (comma-separated allowed)
-   - `QUOTE_FROM_EMAIL` (on the verified domain, e.g. `Apar Dynamics Website <quotes@apardynamics.com>`)
-   - `NEXT_PUBLIC_SITE_URL` (e.g. `https://www.apardynamics.com`)
-3. Redeploy.
+### Testing (default)
+1. Sign up at Resend **with `Abhijeetjoshi226@gmail.com`** and create an API key.
+2. In Vercel → Project → Settings → Environment Variables add only `RESEND_API_KEY`, then redeploy.
+3. Submit the form. The enquiry arrives at `Abhijeetjoshi226@gmail.com` from `onboarding@resend.dev` with a `[TEST]` subject prefix; the visitor's address is the Reply-To.
+
+Resend's shared test sender can only deliver to the email the Resend account was created with, which is why the account must use that address.
+
+### Going live (`info@apardynamics.com`)
+1. In Resend, verify the `apardynamics.com` domain (add the DNS records it shows).
+2. In Vercel add `QUOTE_TO_EMAIL=info@apardynamics.com` and `QUOTE_FROM_EMAIL=Apar Dynamics Website <quotes@apardynamics.com>` (comma-separate `QUOTE_TO_EMAIL` to add more recipients), then redeploy. No code change is needed, and the `[TEST]` prefix disappears.
 
 Attachments are limited to 4 MB (Vercel's request-body limit). Spam protection: hidden honeypot + a best-effort per-IP rate limit; add Vercel Firewall rules for stronger protection. WhatsApp enquiry buttons use `wa.me/917507361156` with a prefilled message.
 
