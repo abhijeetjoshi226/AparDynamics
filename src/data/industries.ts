@@ -11,6 +11,7 @@ export type Industry = {
   basis: "profile" | "inferred";
 };
 
+const product = (name: string, alt: string): ImageAsset => ({ src: `/images/products/${name}.webp`, alt, fit: "cover" });
 const solution = (name: string, alt: string): ImageAsset => ({ src: `/images/solutions/${name}.webp`, alt, fit: "contain" });
 
 export const industries: Industry[] = [
@@ -19,7 +20,7 @@ export const industries: Industry[] = [
     name: "Automotive",
     description: "Testing and inspection fixtures, assembly fixtures and robotic welding for automobile applications.",
     products: ["Testing & inspection fixtures", "Assembly fixtures & lines", "Robotic welding", "Material handling trolleys"],
-    image: solution("cad-4", "CAD render of a semi-automatic assembly station for automotive components"),
+    image: product("trolley-4", "Blue steel rack trolley with mesh base for component handling"),
     basis: "profile",
   },
   {
@@ -27,7 +28,7 @@ export const industries: Industry[] = [
     name: "Engineering & Manufacturing",
     description: "Fixtures, automation and fabrication for general engineering and manufacturing plants.",
     products: ["Custom fixtures", "Fabricated frames and structures", "Machine tending", "Material handling equipment"],
-    image: solution("cad-2", "CAD render of a pneumatic clamping fixture on a base plate"),
+    image: product("press-brake", "Blue press brake used for sheet metal bending"),
     basis: "profile",
   },
   {

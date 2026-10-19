@@ -63,8 +63,17 @@ export const stats: Stat[] = [
 export const machinery = [
   { name: "Robotic welding", detail: "2 robotic welding units" },
   { name: "Tube laser cutting", detail: "1 machine — 6,500 mm length, 150 mm diameter, 1.5 kW" },
-  { name: "Laser cutting", detail: "Laser cutting machines for sheet processing" },
   { name: "CNC machining", detail: "Vertical machining centre" },
+] as const;
+
+/** Machines shown with photographs ("Machines available"). Details stay generic — no capacities are claimed. */
+export const machinesAvailable = [
+  { name: "Laser cutting machine", detail: "Laser cutting machines for sheet processing", src: "/images/products/laser-cutting-machine.webp", alt: "Sheet laser cutting machine inside a workshop", fit: "cover" },
+  { name: "Press brake", detail: "Sheet metal bending", src: "/images/products/press-brake.webp", alt: "Blue press brake with foot pedals and control box", fit: "cover" },
+  { name: "MIG welding machine", detail: "MIG 250 welding set with wire feeder", src: "/images/products/mig-welding-machine.webp", alt: "Yellow MIG 250 welding machine with wire feeder", fit: "contain" },
+  { name: "Bench drilling machine", detail: "Pillar drilling for small parts", src: "/images/products/bench-drilling-machine.webp", alt: "Orange bench drilling machine", fit: "contain" },
+  { name: "Metal cut-off saw", detail: "Abrasive cut-off for sections and tube", src: "/images/products/cut-off-saw.webp", alt: "Yellow metal cut-off saw with abrasive wheel", fit: "contain" },
+  { name: "Screw press", detail: "Hand-operated screw press", src: "/images/products/screw-press.webp", alt: "Hand-operated screw press with flywheel", fit: "contain" },
 ] as const;
 
 export const vision =

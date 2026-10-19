@@ -5,6 +5,7 @@ import { Eye, Target } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { CtaBanner } from "@/components/ui/CtaBanner";
+import { MachineGrid } from "@/components/ui/MachineGrid";
 import { ButtonLink } from "@/components/ui/Button";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { company, machinery, mission, values, vision, fullAddress } from "@/data/site";
@@ -95,6 +96,8 @@ export default function AboutPage() {
             </li>
           ))}
         </ul>
+        <h3 className="mb-5 mt-12 text-xl">Machines available</h3>
+        <MachineGrid />
       </Section>
 
       <Section labelledBy="brands-title">

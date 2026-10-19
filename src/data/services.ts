@@ -3,6 +3,8 @@ export type ImageAsset = {
   alt: string;
   /** `contain` for product cut-outs and CAD renders on white, `cover` for photographs. */
   fit: "cover" | "contain";
+  /** Optional CSS object-position for cropped photographs, e.g. "center 40%". */
+  position?: string;
 };
 
 export type Service = {
@@ -29,6 +31,13 @@ const img = (name: string, alt: string): ImageAsset => ({
   fit: "contain",
 });
 
+const prod = (name: string, alt: string, fit: "cover" | "contain" = "cover", position?: string): ImageAsset => ({
+  src: `/images/products/${name}.webp`,
+  alt,
+  fit,
+  position,
+});
+
 export const services: Service[] = [
   {
     slug: "material-handling",
@@ -37,11 +46,13 @@ export const services: Service[] = [
     summary: "Trolleys, carts and handling equipment built around your parts, loads and shop-floor layout.",
     intro:
       "We design and manufacture material handling trolleys and equipment that move components safely and efficiently through your plant. Each unit is engineered around the part, the load and the way your operators work.",
-    image: img("ss-3", "Stainless steel trolley carrying four lidded containers"),
+    image: prod("trolley-1", "White four-shelf order-picking trolley with red castor wheels", "cover", "center 60%"),
     gallery: [
-      img("ss-8", "Stainless steel three-tier trolley on castors"),
-      img("ss-9", "Stainless steel trolley with drawers"),
-      img("ss-2", "Stainless steel cage trolley with pallet"),
+      prod("trolley-2", "White tiered storage trolley with pegs on castors"),
+      prod("trolley-3", "White multi-tier roller trolley for long components"),
+      prod("trolley-4", "Blue steel rack trolley with mesh base"),
+      prod("trolley-5", "Black mesh cage trolley with towbar"),
+      prod("trolley-6", "Blue stackable component rack on castors"),
     ],
     offerings: [
       "Material handling trolleys",
@@ -68,11 +79,12 @@ export const services: Service[] = [
     summary: "Fixtures, workstations and complete assembly solutions for accurate, repeatable operations.",
     intro:
       "From a single assembly fixture to an end-to-end assembly line, we engineer solutions that help operators and machines position, insert, screw and mount components accurately and repeatably.",
-    image: img("cad-6", "CAD render of a multi-operator assembly workstation"),
+    image: prod("ergonomic-workstation", "Ergonomic assembly workstation with roller conveyor and bin rack", "contain"),
     gallery: [
+      prod("welding-fixture-table", "Welding fixture table with clamps and tube fixtures", "contain"),
+      prod("spm-assembly-machine", "Blue assembly machine with feeder bowl and press unit", "contain"),
+      img("cad-6", "CAD render of a multi-operator assembly workstation"),
       img("cad-4", "CAD render of a semi-automatic assembly station with operator"),
-      img("cad-3", "CAD render of a rotary fixture assembly station"),
-      img("cad-2", "CAD render of a pneumatic clamping assembly fixture"),
     ],
     offerings: [
       "Assembly fixtures",
@@ -103,6 +115,7 @@ export const services: Service[] = [
     gallery: [
       img("cad-1", "CAD render of a guarded automated work cell"),
       img("cad-2", "CAD render of a pneumatic clamping fixture on a base plate"),
+      prod("welding-fixture-table", "Welding fixture table with clamps and tube fixtures", "contain"),
     ],
     offerings: [
       "Robotic welding — spot, arc and TIG",
@@ -129,8 +142,9 @@ export const services: Service[] = [
     summary: "Checking fixtures and testing fixtures that support product quality and compliance.",
     intro:
       "Reliable checking and testing fixtures help you verify product quality and conformity to specification. We design and build fixtures for automotive and other industries, tailored to the part being checked.",
-    image: img("cad-5", "CAD render of a testing station with display and signal tower"),
+    image: prod("profile-test-station", "Aluminium-profile test station with touch screen and clamping unit", "contain"),
     gallery: [
+      img("cad-5", "CAD render of a testing station with display and signal tower"),
       img("cad-1", "CAD render of a guarded testing cell"),
       img("cad-2", "CAD render of a pneumatic checking fixture"),
     ],
@@ -158,12 +172,14 @@ export const services: Service[] = [
     summary: "End-to-end mild steel and stainless steel fabrication, from industrial tables to pharma and food-handling equipment.",
     intro:
       "We offer a wide range of end-to-end MS and SS fabrication services, supported by an extensive range of machinery including tube laser cutting, laser cutting and CNC machining, to meet varied fabrication requirements.",
-    image: img("ss-1", "Stainless steel mobile hopper for pharmaceutical handling"),
+    image: prod("laser-cutting-machine", "Sheet laser cutting machine inside a workshop"),
     gallery: [
+      img("ss-1", "Stainless steel mobile hopper for pharmaceutical handling"),
       img("ss-4", "Stainless steel three-bay sink table"),
       img("ss-5", "Stainless steel industrial worktable with sink"),
       img("ss-6", "Stainless steel tilting bin on castors"),
       img("ss-7", "Stainless steel hospital bed"),
+      prod("press-brake", "Blue press brake with foot pedals and control box"),
     ],
     offerings: [
       "Pharma handling equipment",

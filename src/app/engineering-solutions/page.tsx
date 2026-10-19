@@ -3,6 +3,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { ServiceCard } from "@/components/ui/Cards";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { CtaBanner } from "@/components/ui/CtaBanner";
+import { MachineGrid } from "@/components/ui/MachineGrid";
 import { ButtonLink } from "@/components/ui/Button";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { capabilities, machinery } from "@/data/site";
@@ -73,6 +74,8 @@ export default function EngineeringSolutionsPage() {
             </li>
           ))}
         </ul>
+        <h3 className="mb-5 mt-12 text-xl">Machines available</h3>
+        <MachineGrid />
       </Section>
 
       <CtaBanner />
