@@ -142,7 +142,7 @@ export function WhyChooseSection() {
 }
 
 export function GalleryPreview() {
-  const picks = ["laser", "welding", "cad-rotary", "ss-hopper", "jp-site-office", "cnc"].map((id) => galleryItems.find((g) => g.id === id)).filter((g) => !!g);
+  const picks = ["floor", "cad-rotary", "ss-hopper", "cad-line", "jp-site-office", "cad-semi"].map((id) => galleryItems.find((g) => g.id === id)).filter((g) => !!g);
   return (
     <Section tone="surface" labelledBy="gallery-title">
       <SectionHeading

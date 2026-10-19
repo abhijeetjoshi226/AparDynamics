@@ -2,6 +2,12 @@ import Image from "next/image";
 import { ButtonLink } from "@/components/ui/Button";
 import { isoLabel } from "@/data/site";
 
+const tiles = [
+  { src: "/images/solutions/cad-6.webp", alt: "CAD render of a multi-operator assembly workstation", label: "Assembly workstation" },
+  { src: "/images/solutions/cad-3.webp", alt: "CAD render of a rotary fixture assembly station", label: "Rotary assembly station" },
+  { src: "/images/solutions/cad-1.webp", alt: "CAD render of a guarded automated work cell", label: "Guarded work cell" },
+];
+
 const assurances = [isoLabel, "10,000 sq ft in-house unit", "3D CAD to manufacture"];
 
 export function Hero() {
@@ -36,27 +42,23 @@ export function Hero() {
         </div>
 
         <div className="animate-fade-up relative [animation-delay:150ms]">
-          <figure className="relative aspect-[16/9] overflow-hidden rounded-lg border border-white/20 bg-navy-800 shadow-2xl">
-            <Image
-              src="/images/facility/tube-laser-cutter.webp"
-              alt="Tube laser cutting machine on the Apar Dynamics shop floor"
-              fill
-              priority
-              sizes="(min-width:1024px) 46vw, 100vw"
-              className="object-cover"
-            />
-            <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-navy-900/85 via-transparent to-transparent" />
-            <figcaption className="absolute bottom-3 left-4 text-sm font-bold">Tube laser cutting · Dehu Road unit</figcaption>
-          </figure>
-          <div className="mt-3 grid grid-cols-2 gap-3">
-            {[
-              { src: "/images/facility/robotic-welding.webp", alt: "Industrial robot arm welding a cylindrical component", label: "Robotic welding" },
-              { src: "/images/facility/cnc-machining-centre.webp", alt: "Vertical CNC machining centre", label: "CNC machining" },
-            ].map((tile) => (
-              <figure key={tile.src} className="relative aspect-[16/10] overflow-hidden rounded-lg border border-white/20 bg-navy-800 shadow-xl">
-                <Image src={tile.src} alt={tile.alt} fill sizes="(min-width:1024px) 23vw, 50vw" className="object-cover" />
-                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-transparent to-transparent" />
-                <figcaption className="absolute bottom-2 left-3 text-xs font-bold sm:text-sm">{tile.label}</figcaption>
+          <div className="grid grid-cols-2 gap-3">
+            {tiles.map((tile, i) => (
+              <figure key={tile.src} className={`overflow-hidden rounded-lg border border-white/20 bg-white shadow-2xl ${i === 0 ? "col-span-2" : ""}`}>
+                <div className={`relative ${i === 0 ? "aspect-[16/8]" : "aspect-[4/3]"}`}>
+                  <Image
+                    src={tile.src}
+                    alt={tile.alt}
+                    fill
+                    priority={i === 0}
+                    sizes={i === 0 ? "(min-width:1024px) 46vw, 100vw" : "(min-width:1024px) 23vw, 50vw"}
+                    className="object-contain p-3"
+                  />
+                </div>
+                <figcaption className="flex items-center justify-between gap-2 border-t border-line bg-surface px-3 py-2 text-xs font-bold text-navy sm:text-sm">
+                  <span className="truncate">{tile.label}</span>
+                  <span className="shrink-0 rounded-full bg-blue-50 px-2 py-0.5 text-[0.65rem] uppercase tracking-wide text-blue">CAD render</span>
+                </figcaption>
               </figure>
             ))}
           </div>

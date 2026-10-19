@@ -87,30 +87,14 @@ export default function AboutPage() {
 
       <Section tone="surface" labelledBy="facility-title">
         <SectionHeading id="facility-title" eyebrow="Our facility" title="10,000 Sq Ft Manufacturing Set-up" description={`Located at ${fullAddress}.`} />
-        <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="relative col-span-2 aspect-[16/6] overflow-hidden rounded-xl">
-              <Image src="/images/facility/tube-laser-cutter.webp" alt="Tube laser cutting machine on the Apar Dynamics shop floor" fill sizes="(min-width:1024px) 55vw, 100vw" className="object-cover" />
-            </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-              <Image src="/images/facility/robotic-welding.webp" alt="Industrial robot arm welding a cylindrical component" fill sizes="(min-width:1024px) 27vw, 50vw" className="object-cover" />
-            </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-              <Image src="/images/facility/cnc-machining-centre.webp" alt="Vertical CNC machining centre" fill sizes="(min-width:1024px) 27vw, 50vw" className="object-cover" />
-            </div>
-          </div>
-          <div>
-            <h3 className="text-xl">Machinery</h3>
-            <ul className="mt-4 space-y-3">
-              {machinery.map((m) => (
-                <li key={m.name} className="rounded-xl border border-line bg-white p-4 shadow-card">
-                  <p className="font-extrabold text-navy">{m.name}</p>
-                  <p className="text-sm text-ink-muted">{m.detail}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {machinery.map((m) => (
+            <li key={m.name} className="rounded-[--radius-card] border border-line border-t-4 border-t-accent bg-white p-5 shadow-card">
+              <p className="font-extrabold text-navy">{m.name}</p>
+              <p className="mt-1.5 text-sm text-ink-muted">{m.detail}</p>
+            </li>
+          ))}
+        </ul>
       </Section>
 
       <Section labelledBy="brands-title">

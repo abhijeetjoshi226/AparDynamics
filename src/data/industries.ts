@@ -12,7 +12,6 @@ export type Industry = {
 };
 
 const solution = (name: string, alt: string): ImageAsset => ({ src: `/images/solutions/${name}.webp`, alt, fit: "contain" });
-const facility = (name: string, alt: string): ImageAsset => ({ src: `/images/facility/${name}.webp`, alt, fit: "cover" });
 
 export const industries: Industry[] = [
   {
@@ -28,7 +27,7 @@ export const industries: Industry[] = [
     name: "Engineering & Manufacturing",
     description: "Fixtures, automation and fabrication for general engineering and manufacturing plants.",
     products: ["Custom fixtures", "Fabricated frames and structures", "Machine tending", "Material handling equipment"],
-    image: facility("tube-laser-cutter", "Tube laser cutting machine at the Apar Dynamics facility"),
+    image: solution("cad-2", "CAD render of a pneumatic clamping fixture on a base plate"),
     basis: "profile",
   },
   {

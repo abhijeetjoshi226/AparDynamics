@@ -1,4 +1,4 @@
-export type GalleryCategory = "facility" | "automation" | "engineering" | "fabrication" | "cabins";
+export type GalleryCategory = "facility" | "engineering" | "fabrication" | "cabins";
 
 /**
  * How an image should be described to visitors.
@@ -18,8 +18,7 @@ export type GalleryItem = {
 
 export const galleryCategories: { id: "all" | GalleryCategory; label: string }[] = [
   { id: "all", label: "All" },
-  { id: "facility", label: "Facility & machinery" },
-  { id: "automation", label: "Automation & welding" },
+  { id: "facility", label: "Facility" },
   { id: "engineering", label: "Fixtures & assembly" },
   { id: "fabrication", label: "SS & MS fabrication" },
   { id: "cabins", label: "Portable cabins" },
@@ -39,9 +38,6 @@ const p = (id: string, title: string, file: string, alt: string): GalleryItem =>
 });
 
 export const galleryItems: GalleryItem[] = [
-  f("laser", "Tube laser cutting machine", "facility", "tube-laser-cutter", "Tube laser cutting machine installed on the Apar Dynamics shop floor"),
-  f("welding", "Robotic welding", "automation", "robotic-welding", "Industrial robot arm welding a cylindrical component"),
-  f("cnc", "CNC machining centre", "facility", "cnc-machining-centre", "Vertical CNC machining centre with red enclosure"),
   f("floor", "10,000 sq ft manufacturing unit", "facility", "factory-floor", "Interior of the Apar Dynamics manufacturing shed with steel roof trusses"),
 
   c("cad-cell", "Guarded automated work cell", "cad-1", "CAD render of a guarded automated work cell on a steel stand"),

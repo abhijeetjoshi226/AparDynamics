@@ -29,12 +29,6 @@ const img = (name: string, alt: string): ImageAsset => ({
   fit: "contain",
 });
 
-const facility = (name: string, alt: string): ImageAsset => ({
-  src: `/images/facility/${name}.webp`,
-  alt,
-  fit: "cover",
-});
-
 export const services: Service[] = [
   {
     slug: "material-handling",
@@ -105,10 +99,10 @@ export const services: Service[] = [
     summary: "Robotic work cells, automated operations and robotic welding to improve consistency and throughput.",
     intro:
       "We provide robotic solutions that improve consistency and throughput, including robotic welding supported by our in-house robotic welding units. Our scope also covers machine tending and automated material handling tasks.",
-    image: facility("robotic-welding", "Blue industrial robot arm performing arc welding on a cylindrical component"),
+    image: img("cad-4", "CAD render of a semi-automatic assembly station with operator"),
     gallery: [
       img("cad-1", "CAD render of a guarded automated work cell"),
-      facility("tube-laser-cutter", "Tube laser cutting machine on the Apar Dynamics shop floor"),
+      img("cad-2", "CAD render of a pneumatic clamping fixture on a base plate"),
     ],
     offerings: [
       "Robotic welding — spot, arc and TIG",
@@ -164,9 +158,8 @@ export const services: Service[] = [
     summary: "End-to-end mild steel and stainless steel fabrication, from industrial tables to pharma and food-handling equipment.",
     intro:
       "We offer a wide range of end-to-end MS and SS fabrication services, supported by an extensive range of machinery including tube laser cutting, laser cutting and CNC machining, to meet varied fabrication requirements.",
-    image: facility("tube-laser-cutter", "Tube laser cutting machine on the Apar Dynamics shop floor"),
+    image: img("ss-1", "Stainless steel mobile hopper for pharmaceutical handling"),
     gallery: [
-      img("ss-1", "Stainless steel mobile hopper for pharmaceutical handling"),
       img("ss-4", "Stainless steel three-bay sink table"),
       img("ss-5", "Stainless steel industrial worktable with sink"),
       img("ss-6", "Stainless steel tilting bin on castors"),
