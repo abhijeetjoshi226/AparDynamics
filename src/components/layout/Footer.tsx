@@ -82,7 +82,7 @@ export function Footer() {
             <p className="mb-2 text-xs font-bold uppercase tracking-wider text-white/60">Connect</p>
             <ul className="flex items-center gap-2">
               <li>
-                <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" className="grid size-10 place-items-center rounded-full bg-white/10 hover:bg-[#128c4a]">
+                <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" className="grid size-10 place-items-center rounded-full bg-white/10 hover:bg-[#0e7a3f]">
                   <WhatsAppIcon className="size-5" />
                 </a>
               </li>

@@ -67,9 +67,9 @@ export const portaProducts: PortaProduct[] = [
       "Toll booths and highway projects",
     ],
     options: ["Windows with protective grills", "Door and locking arrangement", "Canopy / sunshade", "Colour and finish"],
-    seoTitle: "Portable Security Cabins & Guard Rooms in Pune",
+    seoTitle: "Portable Security Cabins in Pune",
     seoDescription:
-      "Just Porta portable security cabins and guard rooms — strong steel structure, quick installation and customizable layouts. By Apar Dynamics, Pune.",
+      "Portable security cabins and guard rooms by Just Porta (Apar Dynamics): strong steel structure, quick installation, custom sizes. Pune.",
   },
   {
     slug: "site-offices",
@@ -91,7 +91,7 @@ export const portaProducts: PortaProduct[] = [
     options: ["Window and door configuration", "Partitions and layout", "Colour and finish"],
     seoTitle: "Portable Site Office Cabins in Pune",
     seoDescription:
-      "Just Porta site office cabins for construction sites, industrial projects and remote locations. Customizable steel cabins from Apar Dynamics, Pune.",
+      "Portable site office cabins for construction sites, industrial projects and remote locations. Customizable steel cabins by Just Porta, Pune.",
   },
   {
     slug: "toilet-cabins",
@@ -107,7 +107,7 @@ export const portaProducts: PortaProduct[] = [
     options: ["Number of units", "Layout and fittings", "Colour and finish"],
     seoTitle: "Portable Toilet Cabins in Pune",
     seoDescription:
-      "Just Porta portable toilet cabins — hygienic, durable and quick to install for construction sites, industrial areas and events.",
+      "Hygienic, durable portable toilet cabins by Just Porta for construction sites, industrial areas, events and highway projects. Pune.",
   },
   {
     slug: "shop-and-canteen-cabins",
@@ -121,9 +121,9 @@ export const portaProducts: PortaProduct[] = [
     features: ["Serving window or roller shutter options", "Strong steel structure", "Quick installation", "Weather resistant", "Customizable"],
     idealFor: ["Shops and retail outlets", "Kiosks and small businesses", "Food stalls and canteens", "Catering services", "Events & exhibitions"],
     options: ["Counter and window arrangement", "Roller shutter", "Branding colours", "Interior fittings on request"],
-    seoTitle: "Portable Shop & Canteen Cabins in Pune",
+    seoTitle: "Shop & Canteen Cabins in Pune",
     seoDescription:
-      "Just Porta shop cabins, kiosks and food / canteen cabins — customizable portable steel cabins for retail and catering, from Apar Dynamics.",
+      "Portable shop cabins, kiosks and food or canteen cabins by Just Porta (Apar Dynamics) — customizable steel cabins for retail and catering.",
   },
   {
     slug: "modular-cabins",
@@ -137,9 +137,9 @@ export const portaProducts: PortaProduct[] = [
     features: ["Tailored sizes and layouts", "Strong steel structure", "Quick installation", "Weather resistant", "Cost-effective"],
     idealFor: ["Offices and control rooms", "Retail and hospitality", "Industrial facilities", "Remote locations"],
     options: ["Glazed openings", "Layout and partitions", "Colour and finish"],
-    seoTitle: "Modular & Custom Portable Cabins in Pune",
+    seoTitle: "Modular & Custom Cabins in Pune",
     seoDescription:
-      "Just Porta modular and custom portable cabins tailored to your exact requirements. Steel construction, quick installation. Apar Dynamics, Pune.",
+      "Modular and custom portable cabins tailored to your exact requirements. Steel construction, quick installation. Just Porta, Pune.",
   },
   {
     slug: "premium-cottages",
@@ -167,9 +167,9 @@ export const portaProducts: PortaProduct[] = [
     ],
     idealFor: ["Farmhouses", "Resorts & homestays", "Site offices", "Guest houses", "Weekend homes"],
     options: ["Capsule homes", "Luxury glass cottages", "Compact wooden cabins", "Modular studio units"],
-    seoTitle: "Premium Portable Cottages & Capsule Homes in Pune",
+    seoTitle: "Premium Portable Cottages in Pune",
     seoDescription:
-      "Just Porta premium portable cottages — capsule homes, glass cottages, wooden cabins and modular studios. Ready-to-use living spaces by Apar Dynamics.",
+      "Premium portable cottages by Just Porta: capsule homes, glass cottages, wooden cabins and modular studios — ready-to-use living spaces.",
   },
 ];
 

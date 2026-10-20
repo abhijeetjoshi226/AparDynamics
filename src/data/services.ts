@@ -68,9 +68,9 @@ export const services: Service[] = [
     ],
     industries: ["Automotive", "Engineering & Manufacturing", "Pharmaceutical", "Food Processing"],
     featured: true,
-    seoTitle: "Material Handling Trolleys & Equipment in Pune",
+    seoTitle: "Material Handling Trolleys in Pune",
     seoDescription:
-      "Custom material handling trolleys and equipment in MS and SS, designed and fabricated by Apar Dynamics, Dehu Road, Pune.",
+      "Custom material handling trolleys and equipment in MS and SS, designed and fabricated by Apar Dynamics at Dehu Road, Pune. Request a quote.",
   },
   {
     slug: "assembly-fixtures-and-lines",
@@ -100,9 +100,9 @@ export const services: Service[] = [
     ],
     industries: ["Automotive", "Engineering & Manufacturing", "Electrical & Electronics", "Consumer Goods"],
     featured: true,
-    seoTitle: "Assembly Fixtures & Assembly Lines in Pune",
+    seoTitle: "Assembly Fixtures & Lines in Pune",
     seoDescription:
-      "Custom assembly fixtures, assembly solutions and production lines engineered and manufactured by Apar Dynamics in Pune.",
+      "Custom assembly fixtures, workstations and assembly lines engineered and manufactured by Apar Dynamics in Pune. Request a quote today.",
   },
   {
     slug: "robotic-automation",
@@ -131,9 +131,9 @@ export const services: Service[] = [
     ],
     industries: ["Automotive", "Engineering & Manufacturing", "Electrical & Electronics"],
     featured: true,
-    seoTitle: "Robotic Welding & Industrial Automation in Pune",
+    seoTitle: "Robotic Welding & Automation in Pune",
     seoDescription:
-      "Robotic welding, robotic solutions and machine tending from Apar Dynamics, Dehu Road, Pune. Request a quote for your application.",
+      "Robotic welding, robotic solutions and machine tending from Apar Dynamics, Dehu Road, Pune. Share your application and request a quote.",
   },
   {
     slug: "testing-and-inspection",
@@ -161,9 +161,9 @@ export const services: Service[] = [
     ],
     industries: ["Automotive", "Engineering & Manufacturing", "Electrical & Electronics"],
     featured: true,
-    seoTitle: "Testing, Checking & Inspection Fixtures in Pune",
+    seoTitle: "Testing & Inspection Fixtures in Pune",
     seoDescription:
-      "Custom checking, testing and inspection fixtures for automotive and industrial applications, engineered by Apar Dynamics, Pune.",
+      "Checking, testing and inspection fixtures for automotive and industrial applications, engineered by Apar Dynamics in Pune.",
   },
   {
     slug: "ms-ss-fabrication",
@@ -199,7 +199,7 @@ export const services: Service[] = [
     featured: true,
     seoTitle: "MS & SS Fabrication Services in Pune",
     seoDescription:
-      "End-to-end MS and SS fabrication in Pune — industrial tables, pharma and food handling equipment, trolleys and custom structures.",
+      "End-to-end MS and SS fabrication in Pune: industrial tables, pharma and food-handling equipment, trolleys and custom structures.",
   },
   {
     slug: "vision-systems",
@@ -222,9 +222,9 @@ export const services: Service[] = [
     ],
     industries: ["Automotive", "Electrical & Electronics", "Pharmaceutical", "Consumer Goods"],
     featured: true,
-    seoTitle: "Vision Systems for Inspection & Automation",
+    seoTitle: "Vision Systems for Inspection",
     seoDescription:
-      "Vision systems integrated with checking fixtures, assembly stations and automation cells by Apar Dynamics, Pune.",
+      "Vision systems for inspection, integrated with checking fixtures, assembly stations and automation cells by Apar Dynamics, Pune.",
   },
   {
     slug: "custom-engineering-and-cad",
@@ -251,9 +251,9 @@ export const services: Service[] = [
     ],
     industries: ["Automotive", "Engineering & Manufacturing", "Pharmaceutical", "Food Processing"],
     featured: false,
-    seoTitle: "Custom Engineering & 3D CAD Design in Pune",
+    seoTitle: "Custom Engineering & 3D CAD in Pune",
     seoDescription:
-      "3D CAD design, engineering development and manufacturing under one roof — Apar Dynamics, Dehu Road, Pune.",
+      "3D CAD design, engineering development and manufacturing under one roof — Apar Dynamics, Dehu Road, Pune. Discuss your requirement.",
   },
 ];
 

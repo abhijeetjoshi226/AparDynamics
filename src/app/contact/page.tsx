@@ -7,13 +7,15 @@ import { WhatsAppIcon } from "@/components/ui/icons";
 import { QuoteForm } from "@/components/quote/QuoteForm";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { company, fullAddress, whatsappLink } from "@/data/site";
+import { FaqSection } from "@/components/ui/Faq";
+import { generalFaqs } from "@/data/faq";
 import { buildMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Contact Us — Apar Dynamics, Dehu Road, Pune",
+  title: "Contact Us – Dehu Road, Pune",
   description:
-    "Contact Apar Dynamics at Vitthal Nagar, Dehu Road, Dehugoan, Pune 412114. Call +91 75073 61156 or email info@apardynamics.com.",
+    "Contact Apar Dynamics at Dehu Road, Pune 412114. Call +91 75073 61156 or email info@apardynamics.com for quotes and engineering enquiries.",
   path: "/contact",
 });
 
@@ -78,6 +80,7 @@ export default function ContactPage() {
           </div>
         </div>
       </Section>
+      <FaqSection faqs={generalFaqs} tone="surface" />
     </>
   );
 }

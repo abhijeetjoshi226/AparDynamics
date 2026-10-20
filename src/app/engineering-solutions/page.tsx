@@ -10,13 +10,13 @@ import { capabilities, machinery } from "@/data/site";
 import { services } from "@/data/services";
 import { quoteHref } from "@/data/navigation";
 import { buildMetadata } from "@/lib/metadata";
-import { breadcrumbJsonLd } from "@/lib/structured-data";
+import { breadcrumbJsonLd, itemListJsonLd } from "@/lib/structured-data";
 import { Check, Cog } from "lucide-react";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Engineering Solutions — Automation, Fixtures & Fabrication",
+  title: "Engineering & Automation Solutions, Pune",
   description:
-    "Material handling, assembly fixtures and lines, robotic automation and welding, testing and inspection fixtures, vision systems and MS & SS fabrication from Apar Dynamics, Pune.",
+    "Material handling, assembly fixtures and lines, robotic welding, testing and inspection fixtures, vision systems and MS & SS fabrication in Pune.",
   path: "/engineering-solutions",
 });
 
@@ -24,6 +24,7 @@ export default function EngineeringSolutionsPage() {
   return (
     <>
       <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Engineering Solutions", path: "/engineering-solutions" }])} />
+      <JsonLd data={itemListJsonLd("Engineering solutions", services.map((x) => ({ name: x.title, path: `/engineering-solutions/${x.slug}` })))} />
       <PageHero
         eyebrow="Engineering solutions"
         title="Custom Engineering Built Around Your Production Needs"

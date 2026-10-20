@@ -6,7 +6,7 @@ import { MobileActionBar } from "@/components/layout/MobileActionBar";
 import { SplashLoader } from "@/components/layout/SplashLoader";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL, company } from "@/data/site";
-import { localBusinessJsonLd } from "@/lib/structured-data";
+import { localBusinessJsonLd, websiteJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -26,6 +26,11 @@ export const metadata: Metadata = {
     "Just Porta",
   ],
   formatDetection: { telephone: false },
+  // Search Console / Bing Webmaster ownership tokens (set in Vercel env vars; see README)
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    other: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION } : undefined,
+  },
 };
 
 export const viewport: Viewport = {
@@ -39,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en-IN">
       <body className="flex min-h-screen flex-col antialiased">
         <SplashLoader />
-        <JsonLd data={localBusinessJsonLd()} />
+        <JsonLd data={[localBusinessJsonLd(), websiteJsonLd()]} />
         <Header />
         <main id="main-content" className="flex-1">
           {children}

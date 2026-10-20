@@ -15,10 +15,11 @@ import {
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Apar Dynamics — Industrial Automation, Material Handling & Fabrication in Pune",
+  title: "Industrial Automation & Fabrication in Pune | Apar Dynamics",
   description:
-    "Apar Dynamics engineers material handling equipment, assembly fixtures, robotic automation, testing fixtures and MS & SS fabrication in Pune. Home of Just Porta portable cabins.",
+    "Apar Dynamics in Pune designs and builds material handling equipment, assembly fixtures, robotic welding and MS & SS fabrication. Request a quote.",
   path: "/",
+  absolute: true,
 });
 
 export default function HomePage() {

@@ -79,7 +79,7 @@ export default async function PortaProductPage({ params }: Props) {
             <ul className="mt-4 space-y-2.5">
               {product.features.map((f) => (
                 <li key={f} className="flex gap-2.5 text-sm font-semibold text-navy">
-                  <Check className="mt-0.5 size-4 shrink-0 text-porta" aria-hidden="true" />
+                  <Check className="mt-0.5 size-4 shrink-0 text-porta-700" aria-hidden="true" />
                   {f}
                 </li>
               ))}
@@ -90,7 +90,7 @@ export default async function PortaProductPage({ params }: Props) {
             <ul className="mt-4 space-y-2.5">
               {product.idealFor.map((f) => (
                 <li key={f} className="flex gap-2.5 text-sm font-semibold text-navy">
-                  <Check className="mt-0.5 size-4 shrink-0 text-porta" aria-hidden="true" />
+                  <Check className="mt-0.5 size-4 shrink-0 text-porta-700" aria-hidden="true" />
                   {f}
                 </li>
               ))}
@@ -125,7 +125,7 @@ export default async function PortaProductPage({ params }: Props) {
       </Section>
 
       <Section tone="surface" labelledBy="related-title">
-        <SectionHeading id="related-title" title="More from Just Porta" action={<Link href="/just-porta" className="text-sm font-bold text-porta underline underline-offset-4">View all categories</Link>} />
+        <SectionHeading id="related-title" title="More from Just Porta" action={<Link href="/just-porta" className="text-sm font-bold text-porta-700 underline underline-offset-4">View all categories</Link>} />
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {related.map((p) => (
             <li key={p.slug}>

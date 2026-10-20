@@ -52,7 +52,7 @@ export function ProductCard({ product }: { product: PortaProduct }) {
         <p className="mt-2 flex-1 text-sm text-ink-muted">{product.summary}</p>
         <Link
           href={`/just-porta/${product.slug}`}
-          className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-porta after:absolute after:inset-0 after:content-['']"
+          className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-porta-700 after:absolute after:inset-0 after:content-['']"
         >
           View details
           <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />

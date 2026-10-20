@@ -54,7 +54,7 @@ export function JustPortaShowcase() {
           </div>
         </div>
         <div>
-          <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-porta">A brand of Apar Dynamics</p>
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-porta-700">A brand of Apar Dynamics</p>
           <h2 id="porta-title" className="title-bar text-balance text-2xl sm:text-3xl lg:text-4xl">
             Just Porta — Portable Cabins &amp; Modular Structures
           </h2>
@@ -66,9 +66,9 @@ export function JustPortaShowcase() {
               <li key={p.slug}>
                 <Link
                   href={`/just-porta/${p.slug}`}
-                  className="flex items-center gap-2.5 rounded-lg border border-porta/20 bg-white px-4 py-3 text-sm font-bold text-navy transition hover:border-porta hover:text-porta"
+                  className="flex items-center gap-2.5 rounded-lg border border-porta/20 bg-white px-4 py-3 text-sm font-bold text-navy transition hover:border-porta hover:text-porta-700"
                 >
-                  <Check className="size-4 shrink-0 text-porta" aria-hidden="true" />
+                  <Check className="size-4 shrink-0 text-porta-700" aria-hidden="true" />
                   {p.title}
                 </Link>
               </li>
@@ -195,10 +195,10 @@ export function AboutIntro() {
         <div className="reveal">
           <p className="eyebrow mb-3">About Apar Dynamics</p>
           <h2 id="intro-title" className="text-[1.75rem] sm:text-4xl lg:text-[2.5rem]">
-            Your Engineering Partner for Manufacturing &amp; Assembly
+            Your Engineering Partner in Pune for Manufacturing &amp; Assembly
           </h2>
           <p className="mt-5 text-base leading-relaxed text-ink sm:text-lg">
-            Apar Dynamics specialises in material handling, assembly, robotic automation and testing solutions. From a 10,000 sq ft unit at Dehu Road, Pune, we help customers with end-to-end MS &amp; SS fabrication and engineered systems.
+            Apar Dynamics specialises in material handling, assembly, robotic automation and testing solutions. From a 10,000 sq ft unit at Dehu Road, Pune, we help customers in Pune and across India with end-to-end MS &amp; SS fabrication and engineered systems.
           </p>
           <ul className="mt-7 space-y-4">
             {points.map((p) => (

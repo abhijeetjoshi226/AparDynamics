@@ -12,13 +12,15 @@ import { justPorta, portaProducts } from "@/data/just-porta";
 import { portaApplications } from "@/data/industries";
 import { socials } from "@/data/site";
 import { quoteHref } from "@/data/navigation";
+import { FaqSection } from "@/components/ui/Faq";
+import { portaFaqs } from "@/data/faq";
 import { buildMetadata } from "@/lib/metadata";
-import { breadcrumbJsonLd } from "@/lib/structured-data";
+import { breadcrumbJsonLd, itemListJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Just Porta — Portable Cabins, Security Cabins & Modular Structures",
+  title: "Just Porta Portable Cabins in Pune",
   description:
-    "Just Porta by Apar Dynamics: portable security cabins, site offices, toilet cabins, shop and canteen cabins, modular cabins and premium portable cottages. Customizable and quick to install.",
+    "Just Porta by Apar Dynamics: portable security cabins, site offices, toilet cabins, shop and canteen cabins, modular cabins and cottages in Pune.",
   path: "/just-porta",
   image: "/images/just-porta/modern-capsule-cabin.webp",
 });
@@ -27,6 +29,7 @@ export default function JustPortaPage() {
   return (
     <>
       <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Just Porta", path: "/just-porta" }])} />
+      <JsonLd data={itemListJsonLd("Just Porta portable cabins", portaProducts.map((x) => ({ name: x.title, path: `/just-porta/${x.slug}` })))} />
       <PageHero
         tone="porta"
         eyebrow="A brand of Apar Dynamics"
@@ -68,7 +71,7 @@ export default function JustPortaPage() {
             {justPorta.commonFeatures.map((f) => (
               <li key={f.title} className="rounded-xl border border-porta/20 bg-porta-50 p-4">
                 <p className="flex items-center gap-2 font-extrabold text-navy">
-                  <Check className="size-4 text-porta" aria-hidden="true" />
+                  <Check className="size-4 text-porta-700" aria-hidden="true" />
                   {f.title}
                 </p>
                 <p className="mt-1 text-sm text-ink-muted">{f.text}</p>
@@ -106,21 +109,23 @@ export default function JustPortaPage() {
         <ul className="flex flex-wrap gap-3">
           <li>
             <a href={socials.justPortaWebsite} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 rounded-lg border border-porta/30 bg-white px-4 py-3 text-sm font-bold text-navy hover:border-porta">
-              <ExternalLink className="size-4 text-porta" aria-hidden="true" /> justporta.com
+              <ExternalLink className="size-4 text-porta-700" aria-hidden="true" /> justporta.com
             </a>
           </li>
           <li>
             <a href={socials.justPortaYoutube} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 rounded-lg border border-porta/30 bg-white px-4 py-3 text-sm font-bold text-navy hover:border-porta">
-              <YouTubeIcon className="size-5 text-porta" /> YouTube
+              <YouTubeIcon className="size-5 text-porta-700" /> YouTube
             </a>
           </li>
           <li>
             <a href={socials.justPortaInstagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 rounded-lg border border-porta/30 bg-white px-4 py-3 text-sm font-bold text-navy hover:border-porta">
-              <InstagramIcon className="size-5 text-porta" /> Instagram
+              <InstagramIcon className="size-5 text-porta-700" /> Instagram
             </a>
           </li>
         </ul>
       </Section>
+
+      <FaqSection faqs={portaFaqs} />
 
       <CtaBanner
         title="Need a Portable Cabin?"

@@ -13,7 +13,7 @@ export function MobileActionBar() {
         <Phone className="size-5" aria-hidden="true" />
         Call
       </a>
-      <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className={`${item} bg-[#128c4a] text-white`}>
+      <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className={`${item} bg-[#0e7a3f] text-white`}>
         <WhatsAppIcon className="size-5" />
         WhatsApp
       </a>

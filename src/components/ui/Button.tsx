@@ -13,8 +13,8 @@ const variants: Record<Variant, string> = {
   accent: "bg-accent text-navy hover:bg-accent-600",
   outline: "border-2 border-navy text-navy hover:bg-navy hover:text-white",
   "outline-light": "border-2 border-white/70 text-white hover:bg-white hover:text-navy",
-  whatsapp: "bg-[#128c4a] text-white hover:bg-[#0e7a3f]",
-  porta: "bg-porta text-white hover:bg-[#b83b09]",
+  whatsapp: "bg-[#0e7a3f] text-white hover:bg-[#0b6934]",
+  porta: "bg-porta-700 text-white hover:bg-[#9a3107]",
 };
 
 const sizes: Record<Size, string> = {
