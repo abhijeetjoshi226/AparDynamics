@@ -8,13 +8,12 @@ export const dynamic = "force-dynamic";
 
 /**
  * Delivery targets.
- *  - TESTING (default): enquiries go to TEST_RECIPIENT, sent from Resend's shared testing sender.
- *    Resend only delivers from that sender to the email address the Resend account was created with,
- *    so TEST_RECIPIENT must be the account owner's address.
- *  - LIVE: set QUOTE_TO_EMAIL=info@apardynamics.com and QUOTE_FROM_EMAIL to an address on a domain
- *    verified in Resend. No code change needed.
+ *  - Enquiries go to info@apardynamics.com unless QUOTE_TO_EMAIL overrides it (comma-separated for several).
+ *  - QUOTE_FROM_EMAIL must be an address on a domain verified in Resend (e.g. quotes@apardynamics.com).
+ *    Until it is set, Resend's shared test sender is used, which can only deliver to the Resend account
+ *    owner's own address, so delivery to info@apardynamics.com will be rejected.
  */
-const TEST_RECIPIENT = "Abhijeetjoshi226@gmail.com";
+const DEFAULT_RECIPIENT = "info@apardynamics.com";
 const TEST_SENDER = "Apar Dynamics Website <onboarding@resend.dev>";
 
 // Best-effort, per-instance rate limit. For stronger protection add Vercel Firewall / WAF rules.
@@ -42,9 +41,9 @@ function json(body: Record<string, unknown>, status: number) {
 
 export async function POST(request: Request) {
   const apiKey = process.env.RESEND_API_KEY?.trim();
-  const to = process.env.QUOTE_TO_EMAIL?.trim() || TEST_RECIPIENT;
+  const to = process.env.QUOTE_TO_EMAIL?.trim() || DEFAULT_RECIPIENT;
   const from = process.env.QUOTE_FROM_EMAIL?.trim() || TEST_SENDER;
-  const testing = !process.env.QUOTE_TO_EMAIL?.trim();
+  const testing = !process.env.QUOTE_FROM_EMAIL?.trim();
   if (!apiKey) {
     console.error("[quote] Email delivery is not configured. Set RESEND_API_KEY (see README).");
     return json(
