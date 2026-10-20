@@ -20,7 +20,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Just Porta by Apar Dynamics: portable security cabins, site offices, toilet cabins, shop and canteen cabins, modular cabins and premium portable cottages. Customizable and quick to install.",
   path: "/just-porta",
-  image: "/images/just-porta/hero-cabin.webp",
+  image: "/images/just-porta/modern-capsule-cabin.webp",
 });
 
 export default function JustPortaPage() {
@@ -46,7 +46,7 @@ export default function JustPortaPage() {
         aside={
           <div className="relative">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/20 shadow-2xl">
-              <Image src="/images/just-porta/hero-cabin.webp" alt="Brown and yellow Just Porta portable cabin with serving windows" fill priority sizes="(min-width:1024px) 40vw, 100vw" className="object-cover" />
+              <Image src="/images/just-porta/modern-capsule-cabin.webp" alt="Modern white Just Porta capsule cabin with large glass windows" fill priority sizes="(min-width:1024px) 40vw, 100vw" className="object-cover" />
             </div>
             <Image src={justPorta.logo} alt="Just Porta — perfectly portable logo" width={242} height={197} sizes="110px" className="absolute -bottom-4 -left-2 h-16 w-auto rounded-xl bg-white p-2 shadow-xl sm:h-20" />
           </div>

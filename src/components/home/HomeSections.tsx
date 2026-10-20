@@ -14,7 +14,7 @@ import { capabilities, company, fullAddress, machinery, whatsappLink } from "@/d
 import { ButtonAnchor } from "@/components/ui/Button";
 import { WhatsAppIcon } from "@/components/ui/icons";
 import { QuoteForm } from "@/components/quote/QuoteForm";
-import { MachineGrid } from "@/components/ui/MachineGrid";
+import { MachineGallery } from "@/components/ui/MachineGallery";
 
 export function SolutionsSection() {
   return (
@@ -47,7 +47,7 @@ export function JustPortaShowcase() {
       <div className="grid items-center gap-10 lg:grid-cols-2">
         <div className="relative">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-card-hover">
-            <Image src="/images/just-porta/hero-cabin.webp" alt="Brown and yellow Just Porta portable cabin with serving windows" fill sizes="(min-width:1024px) 45vw, 100vw" className="object-cover" />
+            <Image src="/images/just-porta/modern-capsule-cabin.webp" alt="Modern white Just Porta capsule cabin with large glass windows" fill sizes="(min-width:1024px) 45vw, 100vw" className="object-cover" />
           </div>
           <div className="absolute -bottom-5 right-4 rounded-xl bg-white p-3 shadow-card-hover sm:right-6">
             <Image src={justPorta.logo} alt="Just Porta — perfectly portable logo" width={242} height={197} sizes="110px" className="h-16 w-auto sm:h-20" />
@@ -262,7 +262,7 @@ export function CapabilitiesBand() {
       </div>
       <div className="reveal mt-14">
         <h3 className="text-sm font-extrabold uppercase tracking-[0.16em] !text-accent">Machines available</h3>
-        <MachineGrid className="mt-5" />
+        <MachineGallery className="mt-5" />
       </div>
     </Section>
   );

@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileActionBar } from "@/components/layout/MobileActionBar";
+import { SplashLoader } from "@/components/layout/SplashLoader";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_URL, company } from "@/data/site";
 import { localBusinessJsonLd } from "@/lib/structured-data";
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-IN">
       <body className="flex min-h-screen flex-col antialiased">
+        <SplashLoader />
         <JsonLd data={localBusinessJsonLd()} />
         <Header />
         <main id="main-content" className="flex-1">
