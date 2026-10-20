@@ -13,6 +13,9 @@ type Slide = {
   alt: string;
   cta: { href: string; label: string };
   tabLabel: string;
+  /** `cover` fills the frame; the first slide uses it so the LCP element is the largest, earliest paint. */
+  fit?: "cover" | "contain";
+  position?: string;
 };
 
 const slides: Slide[] = [
@@ -24,6 +27,8 @@ const slides: Slide[] = [
     text: "High-precision laser cutting for pipes, tubes and profiles — tight tolerances, minimal rework and fast turnaround for fabrication and assembly lines.",
     poster: "/images/products/laser-cutting-machine.webp",
     alt: "Pipe laser cutting machine",
+    fit: "cover",
+    position: "center 60%",
     cta: { href: "/engineering-solutions", label: "Explore Our Solutions" },
   },
   {
@@ -70,7 +75,7 @@ export function Hero() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="relative min-h-[40rem] sm:min-h-[42rem] lg:min-h-[34rem]">
+      <div className="relative grid">
         {slides.map((s, i) => (
           <div
             key={s.tabLabel}
@@ -78,7 +83,8 @@ export function Hero() {
             aria-roledescription="slide"
             aria-label={`${i + 1} of ${slides.length}`}
             aria-hidden={i !== active}
-            className={`absolute inset-0 transition-opacity duration-1000 ${i === active ? "z-10 opacity-100" : "pointer-events-none opacity-0"}`}
+            inert={i !== active}
+            className={`col-start-1 row-start-1 transition-opacity duration-1000 ${i === active ? "z-10 opacity-100" : "pointer-events-none opacity-0"}`}
           >
             <div className="container-page relative grid min-h-[40rem] items-center gap-8 pb-28 pt-10 lg:min-h-[34rem] lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
               <div>
@@ -109,7 +115,8 @@ export function Hero() {
                   fill
                   priority={i === 0}
                   sizes="(min-width:1024px) 50vw, 100vw"
-                  className="object-contain"
+                  className={s.fit === "cover" ? "object-cover" : "object-contain"}
+                  style={s.position ? { objectPosition: s.position } : undefined}
                 />
               </div>
             </div>

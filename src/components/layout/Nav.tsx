@@ -140,7 +140,7 @@ export function MobileNav({ items, quoteHref }: { items: NavItem[]; quoteHref: s
                   href={whatsappLink()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-lg bg-[#128c4a] px-4 py-3 text-sm font-bold text-white"
+                  className="flex items-center justify-center gap-2 rounded-lg bg-[#0e7a3f] px-4 py-3 text-sm font-bold text-white"
                 >
                   <WhatsAppIcon className="size-4" /> WhatsApp
                 </a>

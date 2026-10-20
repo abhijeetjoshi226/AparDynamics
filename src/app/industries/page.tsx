@@ -11,9 +11,9 @@ import { buildMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Industries We Serve — Automotive, Pharma, Food & More",
+  title: "Industries Served – Automotive to Pharma",
   description:
-    "Apar Dynamics serves automotive, engineering and manufacturing, electrical and electronics, pharmaceutical, food processing and healthcare industries from Pune.",
+    "Engineering and fabrication for automotive, engineering and manufacturing, electrical, pharmaceutical, food processing and healthcare industries from Pune.",
   path: "/industries",
 });
 
@@ -68,7 +68,7 @@ export default function IndustriesPage() {
           ))}
         </ul>
         <p className="mt-6">
-          <Link href="/just-porta" className="font-bold text-porta underline underline-offset-4">
+          <Link href="/just-porta" className="font-bold text-porta-700 underline underline-offset-4">
             Explore the Just Porta range →
           </Link>
         </p>

@@ -9,9 +9,9 @@ import { buildMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Projects & Gallery — Facility, Fixtures, Fabrication & Cabins",
+  title: "Projects & Gallery – Machines & Fabrication",
   description:
-    "Browse Apar Dynamics machines, trolleys and fabricated equipment, assembly and test stations, CAD renders, SS fabrication range and Just Porta portable cabins.",
+    "Browse Apar Dynamics machines, trolleys and fabricated equipment, assembly and test stations, SS fabrication and Just Porta portable cabins.",
   path: "/projects",
 });
 

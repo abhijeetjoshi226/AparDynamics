@@ -53,7 +53,22 @@ Attachments are limited to 4 MB (Vercel's request-body limit). Spam protection: 
 
 ## SEO
 
-Per-page titles/descriptions, canonical URLs, Open Graph/Twitter cards, `sitemap.xml`, `robots.txt`, LocalBusiness / Service / Breadcrumb JSON-LD (verified details only).
+**What the code already does:** one `<h1>` per page, keyword-first page titles (≤ 60 characters with the brand suffix) and descriptions (≤ 160), canonical URLs, Open Graph / Twitter cards, `sitemap.xml` (with images), `robots.txt`, descriptive alt text, fast static pages with optimised images, and JSON-LD for `LocalBusiness` (with an offer catalogue), `WebSite`, `Service`, `ItemList`, `BreadcrumbList` and `FAQPage`. FAQ answers use only facts from the company profile and brochures.
+
+**Nobody can guarantee a #1 ranking.** Rankings depend on competition and take weeks to months. The site gives search engines everything they need; the steps below are what actually moves the site up.
+
+### Do these once the site is live (in this order)
+1. **Point the real domain at Vercel** (Vercel → Domains) and set `NEXT_PUBLIC_SITE_URL` to it (e.g. `https://www.apardynamics.com`). Canonicals and the sitemap must name the host that serves the site. Redirect the `*.vercel.app` URL to the main domain.
+2. **Google Search Console** → add the domain, paste the verification token into `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, redeploy, then submit `https://<domain>/sitemap.xml`. Do the same in **Bing Webmaster Tools** (`NEXT_PUBLIC_BING_SITE_VERIFICATION`).
+3. **Google Business Profile** for the Dehu Road unit (the biggest factor for "… in Pune" and "near me" searches). Use the exact same name, address and phone as the Contact page, add photos, services and the website link, and ask satisfied customers for reviews.
+4. **Listings and backlinks:** keep name / address / phone identical everywhere (IndiaMART, TradeIndia, JustDial, LinkedIn company page) and link each listing to the website. Link the Just Porta channels (YouTube, Instagram, justporta.com) to the matching pages here.
+5. **Publish useful content** (your blog is an asset): e.g. "How to choose material handling trolleys", "Assembly fixtures explained", "Portable cabin buying guide". Link each article to the matching service page.
+6. **Real photos and case studies** of delivered work (with customer permission) with descriptive file names and alt text.
+7. **Measure:** check Search Console's Performance and Pages reports weekly and the Core Web Vitals report monthly.
+
+### Notes
+- The splash loader holds the first screen for a few seconds; this delays what visitors (and speed tests) see. Showing it only on a visitor's first visit per session would help Core Web Vitals.
+- Keep one version of each page: if the old website is still live on the same domain, redirect its URLs to the matching new pages (301) so ranking history carries over.
 
 ## Content to confirm before launch
 

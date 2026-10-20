@@ -4,7 +4,12 @@
  * Update values here once and they flow through the whole site.
  */
 
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.apardynamics.com").replace(/\/$/, "");
+/**
+ * Canonical origin. Priority: NEXT_PUBLIC_SITE_URL (set this to the final custom domain) → the Vercel
+ * production URL (so canonicals/sitemap never point at a host that is not serving the site) → the profile domain.
+ */
+const vercelProd = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? (vercelProd ? `https://${vercelProd}` : "https://www.apardynamics.com")).replace(/\/$/, "");
 
 export const company = {
   name: "Apar Dynamics",

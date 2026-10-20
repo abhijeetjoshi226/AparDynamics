@@ -14,9 +14,9 @@ import { buildMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = buildMetadata({
-  title: "About Us — Engineering & Manufacturing Company in Pune",
+  title: "About Us – Engineering Company in Pune",
   description:
-    "Apar Dynamics: professionals with 20+ years of experience in manufacturing and assembly solutions, a 10,000 sq ft facility at Dehu Road, Pune, and an ISO certified company.",
+    "Apar Dynamics: 20+ years of manufacturing and assembly experience, a 10,000 sq ft unit at Dehu Road, Pune, and an ISO certified company.",
   path: "/about",
 });
 

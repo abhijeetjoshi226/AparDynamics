@@ -28,7 +28,7 @@ function Field({ id, label, required, error, hint, children }: { id: string; lab
   return (
     <div>
       <label htmlFor={id} className="text-sm font-bold text-navy">
-        {label} {required ? <span aria-hidden="true" className="text-porta">*</span> : <span className="font-normal text-ink-muted">(optional)</span>}
+        {label} {required ? <span aria-hidden="true" className="text-porta-700">*</span> : <span className="font-normal text-ink-muted">(optional)</span>}
       </label>
       {children}
       {hint && !error && (
@@ -202,7 +202,7 @@ export function QuoteForm({ defaultCategory = "", compact = false }: { defaultCa
             <a href="/privacy-policy" target="_blank" className="font-bold text-blue underline underline-offset-2">
               Privacy Policy
             </a>
-            . <span aria-hidden="true" className="text-porta">*</span>
+            . <span aria-hidden="true" className="text-porta-700">*</span>
           </label>
         </div>
         {errors.consent && <p id={`${id("consent")}-error`} className="mt-1 text-sm font-semibold text-[#b42318]">{errors.consent}</p>}

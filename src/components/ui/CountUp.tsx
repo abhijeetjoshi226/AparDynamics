@@ -55,7 +55,8 @@ export function CountUp({ value, duration = 1400 }: { value: string; duration?: 
   }, []);
 
   return (
-    <span ref={ref} aria-label={value}>
+    <span ref={ref}>
+      <span className="sr-only">{value}</span>
       <span aria-hidden="true">{display}</span>
     </span>
   );

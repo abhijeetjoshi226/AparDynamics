@@ -10,9 +10,9 @@ import { buildMetadata } from "@/lib/metadata";
 import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Request a Quote — Engineering Solutions & Portable Cabins",
+  title: "Request a Quote – Engineering & Cabins",
   description:
-    "Request a quote from Apar Dynamics for material handling, assembly fixtures, robotic automation, testing fixtures, fabrication or Just Porta portable cabins.",
+    "Request a quote from Apar Dynamics for material handling, assembly fixtures, robotic automation, fabrication or Just Porta portable cabins.",
   path: "/request-a-quote",
 });
 
